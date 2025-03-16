@@ -15,3 +15,12 @@ export const addTask = () => {
     renderTasks();
   });
 };
+
+export const deleteTask = () => {
+  const deleteButtonEl = document.querySelector('.delete-button')
+    deleteButtonEl.addEventListener('click', () => {
+      const deleteButtons = document.querySelectorAll('.delete-button')
+      for()
+
+    }
+}
