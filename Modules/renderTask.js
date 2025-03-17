@@ -1,9 +1,10 @@
+import { addTask, deleteTask } from "./functionsList.js";
 import { tasks } from "./userTasks.js";
 
 export const renderTasks = () => {
   const ulElement = document.querySelector(".list");
   const tasksHtml = tasks
-    .map((task) => {
+    .map((task, index) => {
       return `<div data-li='${index}' class="task-position">
         <li class="task">${task.text}</li>
         <div class="button-position">
@@ -15,4 +16,6 @@ export const renderTasks = () => {
     .join("");
 
   ulElement.innerHTML = tasksHtml;
+
+  deleteTask();
 };

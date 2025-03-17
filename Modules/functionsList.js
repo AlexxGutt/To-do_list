@@ -17,10 +17,14 @@ export const addTask = () => {
 };
 
 export const deleteTask = () => {
-  const deleteButtonEl = document.querySelector('.delete-button')
-    deleteButtonEl.addEventListener('click', () => {
-      const deleteButtons = document.querySelectorAll('.delete-button')
-      for()
+  const deleteButtons = document.querySelectorAll(".delete-button");
 
-    }
-}
+  for (const deleteButton of deleteButtons) {
+    deleteButton.addEventListener("click", () => {
+      const indexDelete = deleteButton.dataset.del;
+
+      tasks.splice(indexDelete, 1);
+      renderTasks();
+    });
+  }
+};
