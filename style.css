@@ -10,3 +10,7 @@
 .new-task {
   width: 300px;
 }
+
+.task {
+  list-style: none;
+}

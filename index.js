@@ -1,5 +1,6 @@
 import { renderTasks } from "./Modules/renderTask.js";
-import { addTask } from "./Modules/addNewTask.js";
+import { addTask, deleteTask } from "./Modules/functionsList.js";
 
 addTask();
 renderTasks();
+deleteTask();

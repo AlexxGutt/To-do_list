@@ -15,3 +15,16 @@ export const addTask = () => {
     renderTasks();
   });
 };
+
+export const deleteTask = () => {
+  const deleteButtons = document.querySelectorAll(".delete-button");
+
+  for (const deleteButton of deleteButtons) {
+    deleteButton.addEventListener("click", () => {
+      const indexDelete = deleteButton.dataset.del;
+
+      tasks.splice(indexDelete, 1);
+      renderTasks();
+    });
+  }
+};
