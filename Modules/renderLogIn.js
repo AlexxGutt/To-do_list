@@ -4,7 +4,7 @@ export const renderLogin = () => {
   const tasksHtml = `<div class="login-position">
         <input type="text" id="login" placeholder="Логин">
         <input type="password" id="password" placeholder="Пароль">
-        <div class="button-position">
+        <div class="button-pos">
           <button id="login-button">Войти</button>
         </div>
       </div>`;

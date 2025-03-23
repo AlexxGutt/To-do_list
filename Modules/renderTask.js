@@ -16,7 +16,7 @@ export const renderTasks = () => {
     .join("");
 
   const appHtml = `
-    <ul class="list">${tasksHtml}</ul>
+    <div class="list">${tasksHtml}</div>
       <div class="add-task">
         <input
           class="new-task"
