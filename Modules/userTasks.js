@@ -1,1 +1,4 @@
-export let tasks = [{ text: "Выпить Coca-Cola" }, { text: "Сходить в кино" }];
+export let tasks = [
+  { text: "Выпить Coca-Cola", isDone: false },
+  { text: "Сходить в кино", isDone: false },
+];

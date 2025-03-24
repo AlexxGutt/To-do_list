@@ -6,9 +6,13 @@ export const renderTasks = () => {
   const tasksHtml = tasks
     .map((task, index) => {
       return `<div data-li='${index}' class="task-position">
-        <div data-index='${index}' class="task">${task.text}</div>
+        <div data-index='${index}' class="task ${task.isDone ? "done" : ""}">${
+        task.text
+      }</div>
         <div class="button-position">
-          <button data-done='${index}' class="done-button">Выполнено</button>
+          <button data-done='${index}' class="done-button ${
+        task.isDone ? "none" : ""
+      }">Выполнено</button>
           <button data-del='${index}' class="delete-button">Удалить</button>
         </div>
       </div>`;

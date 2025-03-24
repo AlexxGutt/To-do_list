@@ -12,6 +12,7 @@ export const addTask = () => {
     } else {
       const newTask = {
         text: userText.value,
+        isDone: false,
       };
 
       tasks.push(newTask);
@@ -43,13 +44,11 @@ export const doneTask = () => {
   for (const doneButton of doneButtons) {
     doneButton.addEventListener("click", () => {
       const indexDone = doneButton.dataset.done; // Получаем индекс задачи
-      const taskElement = document.querySelector(
-        `.task[data-index='${indexDone}']`
-      ); // Находим элемент задачи
+      // Находим элемент задачи
 
-      if (taskElement) {
-        taskElement.classList.add("done"); // Добавляем класс .done к конкретной задаче
-        doneButton.style.display = "none";
+      if (tasks[indexDone].isDone === false) {
+        tasks[indexDone].isDone = true; // Добавляем класс .done к конкретной задаче
+        renderTasks();
       }
     });
   }

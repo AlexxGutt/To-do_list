@@ -217,3 +217,7 @@ body {
 .login-position input:focus::placeholder {
   color: transparent;
 }
+
+.none {
+  display: none;
+}
