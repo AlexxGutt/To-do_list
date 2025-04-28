@@ -1,12 +1,223 @@
-.task-position {
-  width: 400px;
+/* Основной контейнер, который центрирует всё на странице */
+body {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding-bottom: 15px;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
+}
+
+/* Контейнер для списка задач и добавления новой задачи */
+.task-container {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для блока добавления задачи */
+.add-task {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: nowrap;
+  align-items: center;
 }
 
 .new-task {
-  width: 300px;
+  width: 100%; /* Занимает всю ширину контейнера */
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.new-task:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+.add-button {
+  width: 100%; /* Занимает всю ширину контейнера */
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.add-button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.add-button:active {
+  transform: scale(0.95);
+}
+
+/* Стили для списка задач */
+.task-position {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  margin: 10px 0;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task-position:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.task {
+  list-style: none;
+  font-size: 18px;
+  color: #333333;
+  margin: 0;
+  flex-grow: 1;
+  padding-right: 15px;
+}
+
+.button-position {
+  display: flex;
+  gap: 10px;
+}
+
+.done-button,
+.delete-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.done-button {
+  background-color: #4caf50;
+  color: white;
+}
+
+.done-button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.delete-button {
+  background-color: #f44336;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #e53935;
+  transform: scale(1.05);
+}
+
+.task.done {
+  text-decoration: line-through;
+  color: #888888;
+  opacity: 0.7;
+}
+
+.done-button.hidden {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.task-position {
+  animation: fadeIn 0.5s ease;
+}
+
+/* Основные стили для контейнера */
+.login-position {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  margin: 0 auto;
+  font-family: "Arial", sans-serif;
+}
+
+/* Стили для текстовых полей */
+.login-position input[type="text"],
+.login-position input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.login-position input[type="text"]:focus,
+.login-position input[type="password"]:focus {
+  border-color: #007bff;
+}
+
+/* Стили для кнопки */
+.button-pos {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#login-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#login-button:hover {
+  background-color: #0056b3;
+}
+
+/* Дополнительные стили для красоты */
+.login-position input::placeholder {
+  color: #999;
+}
+
+.login-position input:focus::placeholder {
+  color: transparent;
+}
+
+.none {
+  display: none;
 }
